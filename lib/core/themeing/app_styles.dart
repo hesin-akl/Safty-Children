@@ -18,8 +18,8 @@ abstract class AppStyles {
     fontWeight: FontWeight.w500,
   );
   static TextStyle boxStyle = TextStyle(
-    color: AppColors.fontColor,
+    color: const Color.fromARGB(255, 0, 0, 0),
     fontWeight: FontWeight.bold,
-    fontSize: 27.sp,
+    fontSize: 25.sp,
   );
 }

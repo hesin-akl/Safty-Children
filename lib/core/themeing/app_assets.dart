@@ -1,5 +1,4 @@
 abstract class AppAssets {
-  static const String img1 = 'assets/img/image1.jpeg';
   static const String img2 = 'assets/img/image2.png';
   static const String img3 = 'assets/img/image3.png';
   static const String img4 = 'assets/img/image4.png';
@@ -27,5 +26,5 @@ abstract class AppAssets {
   static const String img26 = 'assets/img/image26.png';
   static const String poisoningVid = 'assets/vids/poisning.mp4';
   static const String chokingVid = 'assets/vids/choking.mp4';
-  static const String copoiltIcon = 'assets/svg/copilot.svg';
+  static const String copoiltIcon = 'assets/icons/copilot.svg';
 }

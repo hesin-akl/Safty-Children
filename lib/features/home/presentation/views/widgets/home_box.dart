@@ -23,6 +23,8 @@ class HomeBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
+
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -43,8 +45,12 @@ class HomeBox extends StatelessWidget {
             verticalSpace(10),
             Text(
               title,
-              style: AppStyles.boxStyle ,
+
+              style: AppStyles.boxStyle,
               textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
