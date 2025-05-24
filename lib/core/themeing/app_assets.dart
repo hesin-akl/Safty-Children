@@ -25,5 +25,7 @@ abstract class AppAssets {
   static const String img24 = 'assets/img/image24.png';
   static const String img25 = 'assets/img/image25.png';
   static const String img26 = 'assets/img/image26.png';
-  
+  static const String poisoningVid = 'assets/vids/poisning.mp4';
+  static const String chokingVid = 'assets/vids/choking.mp4';
+  static const String copoiltIcon = 'assets/svg/copilot.svg';
 }

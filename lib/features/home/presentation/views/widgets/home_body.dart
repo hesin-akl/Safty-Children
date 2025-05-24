@@ -10,46 +10,41 @@ import 'package:safty_children/features/home/presentation/views/widgets/home_box
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0).w,
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: HomeBox(
-                  color: AppColors.yellow,
-                  bgColor: Colors.white,
-                  icon: Icons.warning_amber_rounded,
-                  title: AppStrings.poisoning,
-                  onTap:
-                      () => context.pushNamed(
-                        Routes.select,
-                        arguments: AppStrings.poisoning,
-                      ),
-                ),
-              ),
-              verticalSpace(16),
-              Expanded(
-                child: HomeBox(
-                  color: AppColors.red,
-                  bgColor: Colors.white,
-                  icon: Icons.air,
-                  title: AppStrings.choking,
-                  onTap:
-                      () => context.pushNamed(
-                        Routes.select,
-                        arguments: AppStrings.choking,
-                      ),
-                ),
-              ),
-            ],
-          ),
-        ],
+      child: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            HomeBox(
+              color: AppColors.yellow,
+              bgColor: Colors.white,
+              icon: Icons.warning_amber_rounded,
+              title: AppStrings.poisoning,
+              onTap:
+                  () => context.pushNamed(
+                    Routes.select,
+                    arguments: AppStrings.poisoning,
+                  ),
+            ),
+            verticalSpace(16),
+            HomeBox(
+              color: AppColors.red,
+              bgColor: Colors.white,
+              icon: Icons.air,
+              title: AppStrings.choking,
+              onTap:
+                  () => context.pushNamed(
+                    Routes.select,
+                    arguments: AppStrings.choking,
+                  ),
+            ),
+          ],
+        ),
       ),
     );
   }

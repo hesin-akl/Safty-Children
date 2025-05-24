@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:safty_children/core/helpers/spacer.dart';
-import 'package:safty_children/core/themeing/app_colors.dart';
+import 'package:safty_children/core/themeing/app_styles.dart';
 
 class HomeBox extends StatelessWidget {
   final String title;
@@ -28,8 +28,8 @@ class HomeBox extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(8).w,
         padding: const EdgeInsets.all(16).w,
-        height: 150.h,
-        width: 150.w,
+        height: 250.h,
+        width: 250.w,
         decoration: BoxDecoration(
           color: bgColor,
           border: Border.all(color: color, width: 2),
@@ -37,16 +37,13 @@ class HomeBox extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(icon, color: color, size: 40.sp),
             verticalSpace(10),
             Text(
               title,
-              style: const TextStyle(
-                color: AppColors.fontColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+              style: AppStyles.boxStyle ,
               textAlign: TextAlign.center,
             ),
           ],

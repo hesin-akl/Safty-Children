@@ -1,0 +1,75 @@
+import 'package:safty_children/features/test/models/question_model.dart';
+
+final List<QuestionModel> stageFourQuestions = [
+  QuestionModel(
+    question: '1- هل لديك معلومات عن الذكاء الاصطناعي في الممارسة العملية؟',
+    answers: ['نعم', 'لا'],
+    correctAnswer: [],
+    isMultiChoice: false,
+    type: QuestionType.withoutPoints,
+  ),
+  QuestionModel(
+    question: '2- كم مرة تعلمت استخدام الذكاء الاصطناعي في الممارسة العملية؟',
+    answers: ['لم أتعلم', 'مرة واحدة', 'مرتين', 'أكثر من مرتين'],
+    correctAnswer: [],
+    isMultiChoice: false,
+    type: QuestionType.withoutPoints,
+    visibilityCondition: (previousAnswers) => previousAnswers["3_0"] == 0,
+  ),
+  QuestionModel(
+    question: '3- فوائد استخدام الذكاء الاصطناعي في الإسعافات الأولية:',
+    answers: [
+      'تقديم إرشادات دقيقة وسريعة',
+      'استبدال الممرضين في العمل',
+      'تحسين سرعة اتخاذ القرار',
+      'زيادة الحاجة للتدريب التقليدي فقط',
+    ],
+    correctAnswer: [0, 2],
+    isMultiChoice: true,
+    point: 1,
+    type: QuestionType.withPoints,
+    visibilityCondition: (previousAnswers) => previousAnswers["3_0"] == 0,
+  ),
+  QuestionModel(
+    question: '4- التحديات المرتبطة باستخدام الذكاء الاصطناعي في المجال الطبي:',
+    answers: [
+      'عدم دقة البيانات أحيانًا',
+      'التكلفة العالية لتطوير الأنظمة',
+      'عدم الحاجة للتحديث المستمر',
+      'سهولة الاستخدام بدون تدريب',
+    ],
+    correctAnswer: [0, 1],
+    isMultiChoice: true,
+    point: 1,
+    type: QuestionType.withPoints,
+    visibilityCondition: (previousAnswers) => previousAnswers["3_0"] == 0,
+  ),
+  QuestionModel(
+    question: '5- كيف يمكن للذكاء الاصطناعي تحسين جودة الإسعافات الأولية؟',
+    answers: [
+      'تحليل سريع للبيانات الطبية',
+      'توفير معلومات محدثة باستمرار',
+      'زيادة الأخطاء الطبية',
+      'تعطيل التواصل بين الفريق الطبي',
+    ],
+    correctAnswer: [0, 1],
+    isMultiChoice: true,
+    point: 1,
+    type: QuestionType.withPoints,
+    visibilityCondition: (previousAnswers) => previousAnswers["3_0"] == 0,
+  ),
+  QuestionModel(
+    question: '6- معوقات استخدام تطبيق الذكاء الاصطناعي مساعد الطيار في الممارسة التمريضية:',
+    answers: [
+      'الخوف من فقدان الوظائف عن طريق الإستبدال بالتطبيقات التكنولوجية',
+      'توفر تدريب متكامل على دمج الذكاء الاصطناعي',
+      'نقص الدعم التنظيمي والإرشادات',
+      'تحسين التعاون بين الممرضات والذكاء الاصطناعي',
+    ],
+    correctAnswer: [0, 2],
+    isMultiChoice: true,
+    point: 1,
+    type: QuestionType.withPoints,
+    visibilityCondition: (previousAnswers) => previousAnswers["3_0"] == 0,
+  ),
+];

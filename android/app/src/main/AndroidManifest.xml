@@ -17,7 +17,7 @@
     </queries>
 
     <application
-        android:label="safty_children"
+        android:label="إسعافات أولية للأطفال"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
