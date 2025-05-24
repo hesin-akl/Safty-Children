@@ -21,5 +21,6 @@ abstract class AppStyles {
     color: const Color.fromARGB(255, 0, 0, 0),
     fontWeight: FontWeight.bold,
     fontSize: 25.sp,
+    fontFamily: 'Amiri',
   );
 }

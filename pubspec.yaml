@@ -38,3 +38,7 @@ flutter:
     - assets/vids/
     - assets/icons/
 
+  fonts:
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf

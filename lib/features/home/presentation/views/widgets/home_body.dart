@@ -3,48 +3,42 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:safty_children/core/helpers/navigation_helper.dart';
 import 'package:safty_children/core/helpers/spacer.dart';
 import 'package:safty_children/core/routing/Routes.dart';
-import 'package:safty_children/core/themeing/app_colors.dart';
-import 'package:safty_children/core/themeing/app_strings.dart';
 import 'package:safty_children/features/home/presentation/views/widgets/home_box.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+  final List<Map<String, dynamic>> homeBoxesData;
+
+  const HomeBody({super.key, required this.homeBoxesData});
 
   @override
   Widget build(BuildContext context) {
-
-    return Padding(
-      padding: const EdgeInsets.all(16.0).w,
-      child: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            HomeBox(
-              color: AppColors.yellow,
-              bgColor: Colors.white,
-              icon: Icons.warning_amber_rounded,
-              title: AppStrings.poisoning,
-              onTap:
-                  () => context.pushNamed(
-                    Routes.select,
-                    arguments: AppStrings.poisoning,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0).w,
+        child: SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: homeBoxesData.map((boxData) {
+              return Column(
+                children: [
+                  HomeBox(
+                    color: boxData['color'],
+                    bgColor: boxData['bgColor'],
+                    icon: boxData['icon'],
+                    title: boxData['title'],
+                    onTap: () => context.pushNamed(
+                      Routes.select,
+                      arguments: boxData['routeArg'],
+                    ),
                   ),
-            ),
-            verticalSpace(16),
-            HomeBox(
-              color: AppColors.red,
-              bgColor: Colors.white,
-              icon: Icons.air,
-              title: AppStrings.choking,
-              onTap:
-                  () => context.pushNamed(
-                    Routes.select,
-                    arguments: AppStrings.choking,
-                  ),
-            ),
-          ],
+                  verticalSpace(16),
+                ],
+              );
+            }).toList(),
+          ),
         ),
       ),
     );

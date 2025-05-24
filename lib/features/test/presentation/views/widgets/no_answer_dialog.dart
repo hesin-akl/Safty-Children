@@ -11,18 +11,16 @@ class NoAnswerDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Expanded(
-        child: Container(
-          width: double.infinity,
-
-          decoration: BoxDecoration(color: AppColors.appBarColor),
-          child: Center(
-            child: Text(
-              'تنبيه !',
-              style: AppStyles.appBarStyle.copyWith(
-                fontSize: 20.sp,
-                color: Colors.white,
-              ),
+      title: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 8),
+        decoration: BoxDecoration(color: AppColors.appBarColor),
+        child: Center(
+          child: Text(
+            'تنبيه !',
+            style: AppStyles.appBarStyle.copyWith(
+              fontSize: 20.sp,
+              color: Colors.white,
             ),
           ),
         ),

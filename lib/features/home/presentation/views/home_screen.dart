@@ -23,6 +23,41 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   Key navBarKey = UniqueKey();
 
+  bool isLoading = true;
+
+  late List<Map<String, dynamic>> homeBoxesData;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadResources();
+  }
+
+  Future<void> _loadResources() async {
+    await Future.delayed(const Duration(seconds: 2));
+
+    homeBoxesData = [
+      {
+        'color': AppColors.yellow,
+        'bgColor': Colors.white,
+        'icon': Icons.warning_amber_rounded,
+        'title': AppStrings.poisoning,
+        'routeArg': AppStrings.poisoning,
+      },
+      {
+        'color': AppColors.red,
+        'bgColor': Colors.white,
+        'icon': Icons.air,
+        'title': AppStrings.choking,
+        'routeArg': AppStrings.choking,
+      },
+    ];
+
+    setState(() {
+      isLoading = false;
+    });
+  }
+
   changeIndxex({required BuildContext context, required int index}) async {
     if (index == 1) {
       await context.pushNamed(Routes.media);
@@ -39,6 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (isLoading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -53,14 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.appBarColor,
         elevation: 11,
       ),
-      body: HomeBody(),
+      body: HomeBody(homeBoxesData: homeBoxesData),
       bottomNavigationBar: ConvexAppBar(
         color: Colors.white,
         key: navBarKey,
         height: 70.h,
         backgroundColor: AppColors.appBarColor,
         initialActiveIndex: selectedIndex,
-
         items: [
           TabItem(icon: Icons.home, title: 'الرئيسية'),
           TabItem(icon: Icons.video_collection, title: 'محتوى مرئى'),

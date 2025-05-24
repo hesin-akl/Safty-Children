@@ -36,6 +36,18 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
+        
+    }
+
+    applicationVariants.all {
+        outputs.all {
+            val outputImpl = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            if (buildType.name == "release") {
+                outputImpl.outputFileName = "first_aid_for_kids.apk"
+            } else if (buildType.name == "debug") {
+                outputImpl.outputFileName = "first_aid_for_kids_debug.apk"
+            }
+        }
     }
 }
 

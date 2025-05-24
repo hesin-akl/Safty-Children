@@ -23,9 +23,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('عرض الرابط'),
-      ),
+   
       body: WebViewWidget(controller: _controller),
     );
   }
